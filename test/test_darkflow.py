@@ -50,7 +50,7 @@ def download_file(url, savePath):
         print("Downloading " + fileName + " file...")
         r = requests.get(url, stream=True)
         with open(savePath, 'wb') as f:
-            for chunk in r.iter_content(chunk_size=1024): 
+            for chunk in r.iter_content(chunk_size=1024):
                 if chunk: # filter out keep-alive new chunks
                     f.write(chunk)
         r.close()
@@ -169,7 +169,7 @@ def test_CLI_SAVEPB_YOLOv2():
     #      contents of those files.
 
     testString = "flow --model {0} --load {1} --config {2} --threshold 0.4 --savepb".format(yolo_CfgPath, yolo_WeightPath, generalConfigPath)
-    
+
     with pytest.raises(SystemExit):
             executeCLI(testString)
 

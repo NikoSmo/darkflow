@@ -3,5 +3,9 @@
 import sys
 from darkflow.cli import cliHandler
 
+#args = ['cfg/yolo.cfg','bin/yolo.weights','camera','1.0']
 cliHandler(sys.argv)
 
+
+# Run with
+# flow --model cfg/yolo.cfg --load bin/yolo.weights --demo camera --gpu 0.6
